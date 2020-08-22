@@ -42,5 +42,23 @@
   (map + '(1 2 3) '(10 20 30)))
 
 ;; filter/count/take/drop
-(print (filter even? '(1 2 3 4)))
-(print (count even? '(1 2 3 4)))
+(print (filter even? '(1 2 3 4)))    ; => '(2 4)
+(print (count even? '(1 2 3 4)))     ; => 2
+(print (take '(1 2 3 4) 2))          ; => '(1 2)
+(print (drop '(1 2 3 4) 2))          ; => '(3 4)
+
+;;; Vectors
+;; Vectors are fixed-length arrays
+(print #(1 2 3)) ; => '#(1 2 3)
+(print (vector-append #(1 2 3) #(4 5 6)))  ; => '#(1 2 3 4 5 6)
+
+;;; Hashes
+; https://groups.csail.mit.edu/mac/ftpdir/scheme-7.4/doc-html/scheme_12.html#SEC106
+(load-option 'hash-table)
+(define m (make-eq-hash-table))
+(hash-table/put! m 'a 1)
+(hash-table/put! m 'b 2)
+(hash-table/put! m 'c 3)
+
+;; Retrieve a value
+(print (hash-table/get m 'a 999)) ; => 1
