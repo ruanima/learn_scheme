@@ -31,11 +31,3 @@
 (print (/ 1 3)) ; => 1/3
 (print (exact->inexact 1/3)) ; => 0.3333333333333333
 (print (+ 1+2i  2-3i)) ; => 3-1i
-
-;;; Booleans
-(print "######## Booleans")
-(print #t) ; for true
-(print #f) ; for false -- any value other than #f is true
-(print (not #t)) ; => #f
-(print (and 0 #f (error "doesn't get here"))) ; => #f
-(print (or #f 0 (error "doesn't get here")))  ; => 0
